@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e607de7-b20b-4d1e-822b-2e165e70968c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Character.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Character.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/CharactersAtMovie.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/ListCharacters.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ListCharacters.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/ListMovies.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ListMovies.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -68,7 +61,7 @@
         <entry file="file://$PROJECT_DIR$/src/Components/ListCharacters.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="479">
-              <caret line="144" column="25" selection-start-line="144" selection-start-column="25" selection-end-line="144" selection-end-column="25" />
+              <caret line="144" column="8" selection-start-line="144" selection-start-column="8" selection-end-line="144" selection-end-column="8" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -211,12 +204,12 @@
       <option name="presentableId" value="Default" />
       <updated>1563324081122</updated>
       <workItem from="1563324084580" duration="18797000" />
-      <workItem from="1563343558735" duration="6922000" />
+      <workItem from="1563343558735" duration="7127000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25719000" />
+    <option name="totallyTimeSpent" value="25924000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -315,7 +308,7 @@
     <entry file="file://$PROJECT_DIR$/src/Components/ListCharacters.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="479">
-          <caret line="144" column="25" selection-start-line="144" selection-start-column="25" selection-end-line="144" selection-end-column="25" />
+          <caret line="144" column="8" selection-start-line="144" selection-start-column="8" selection-end-line="144" selection-end-column="8" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>

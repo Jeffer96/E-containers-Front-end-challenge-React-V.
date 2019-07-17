@@ -124,7 +124,7 @@ export class ListCharacters extends  React.Component{
             filterType : "eye_color",
             filter : val
         });
-        e.setValue(null);
+
     }
 
     filterByGender(e){
@@ -133,7 +133,7 @@ export class ListCharacters extends  React.Component{
             filterType : "gender",
             filter : val
         });
-        e.setValue(null);
+
     }
 
     filterByMovie(e){
@@ -142,7 +142,7 @@ export class ListCharacters extends  React.Component{
             filterType : "movie",
             filter : val
         });
-        e.setValue(null);
+        
     }
 
     render(){
