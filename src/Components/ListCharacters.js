@@ -3,6 +3,7 @@ import loading from "../Support/Img/loading.gif";
 import {Character} from "./Character";
 import {OpeningCrawl} from "./OpeningCrawl";
 import '../Support/Styles/common.css';
+import Select from 'react-select'
 
 export class ListCharacters extends  React.Component{
 
@@ -19,6 +20,7 @@ export class ListCharacters extends  React.Component{
             currentTitle : "",
             currentIdEpisode : "",
             currentText: "",
+            movieOpts : []
         };
         this.getCharsList = this.getCharsList.bind(this);
         this.executeFilter = this.executeFilter.bind(this);
@@ -50,13 +52,16 @@ export class ListCharacters extends  React.Component{
                     .then((data)=>{
                         return data.json();
                     }).then((moviesData)=>{
+                        let movieOptions = [];
                         let moviesInfo = moviesData.results.map(function(movie,i){
+                            movieOptions.push({value : movie.url, label : movie.title});
                             return {title : movie.title, url : movie.url, crwl : movie.opening_crawl, epid : movie.episode_id};
                         });
                         this.setState({
                             chars : data.results,
                             loading: false,
-                            movies : moviesInfo
+                            movies : moviesInfo,
+                            movieOpts : movieOptions
                         });
                 })
             }).catch((error)=>{
@@ -114,13 +119,13 @@ export class ListCharacters extends  React.Component{
 
     executeFilter(){
 
-        if (this.state.filterType==="eye_color"){
+        if (this.state.filterType==="eye_color" && this.state.filter!="none"){
             return this.getCharListByColorEye(this.state.filter);
-        }else if (this.state.filterType==="gender"){
+        }else if (this.state.filterType==="gender" && this.state.filter!="none"){
             return this.getCharListByGender(this.state.filter);
-        }else if (this.state.filterType==="movie"){
+        }else if (this.state.filterType==="movie" && this.state.filter!="none"){
             return this.getCharListByMovie(this.state.filter);
-        }else if (this.state.filter==="none"){
+        }else{
             return this.getCharsList();
         }
 
@@ -183,22 +188,20 @@ export class ListCharacters extends  React.Component{
                 </div>
                 <h3>Personajes </h3>
                 <div id="controlBar">
-                    <select onChange={this.filterByColorEyes}>
+                    <select className="selectOpt" onChange={this.filterByColorEyes}>
                         <option value={"none"} >Seleccione un color de ojos</option>
                         <option value={"red"} >Rojo</option>
                         <option value={"blue"} >Azul</option>
                         <option value={"yellow"} >Amarillo</option>
                         <option value={"brown"} >Cafe</option>
                     </select>
-                    <select onChange={this.filterByGender}>
+                    <select className="selectOpt"  onChange={this.filterByGender}>
                         <option value={"none"} >Seleccione un genero</option>
                         <option value={"male"} >Mujer</option>
                         <option value={"female"} >Hombre</option>
                         <option value={"n/a"} >Robot / Mounstro</option>
                     </select>
-                    <select onChange={this.filterByMovie}>
-                        <option value={"none"} >Seleccione una pelicula</option>
-                    </select>
+                    <Select className="selectOpt"  onChange={this.filterByMovie} options={this.state.movieOpts}/>
                 </div>
                 <h1>{this.state.messageFilter}</h1>
                 <table className="table table-striped" style={{ marginTop: 20 }} >

@@ -119,3 +119,8 @@
     from{margin-top: 130%}
     to{margin-top: -300%}
 }
+
+.selectOpt{
+    width: 30%;
+    border-width: 0px 0px 1px 0px;
+}
