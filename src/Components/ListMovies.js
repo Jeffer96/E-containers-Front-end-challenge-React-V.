@@ -21,7 +21,6 @@ export class ListMovies extends React.Component{
 				return data.json();
 			}).then( (jsonData) => {
 				this.setState({movies : jsonData.results});
-				console.log(this.state.movies);
 				this.setState({loading:false});
 				//console.log(jsonData.results);
 			}).catch( (error) => {
@@ -36,7 +35,7 @@ export class ListMovies extends React.Component{
 					<td>{currentMovie.title}</td>
 					<td>{currentMovie.episode_id}</td>
 					<td>{currentMovie.director}</td>
-					<td><Link to={"/charsatmovie/"+currentMovie.url} >See Characters</Link></td>
+					<td><Link to={{pathname:'/characters',charProps:{filter: "movie", idFilter : currentMovie.url}}} >Ver Personajes</Link></td>
 				</tr>
 			);
 		});
@@ -53,10 +52,10 @@ export class ListMovies extends React.Component{
 				<table className="table table-striped" style={{ marginTop: 20 }} >
 					<thead>
 					<tr>
-						<th>Name</th>
-						<th># Episodie</th>
+						<th>Nombre</th>
+						<th># episodio</th>
 						<th>Director </th>
-						<th>Characters</th>
+						<th>personajes</th>
 					</tr>
 					</thead>
 					<tbody>
