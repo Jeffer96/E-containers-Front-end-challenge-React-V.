@@ -17,6 +17,8 @@ export class ListMovies extends React.Component{
 			showingCrawl:false
 		};
 		this.getMoviesList = this.getMoviesList.bind(this);
+		this.closeCrawl = this.closeCrawl.bind(this);
+		this.openCrawl = this.openCrawl.bind(this);
 	}
 
 	componentDidMount(){
@@ -46,6 +48,16 @@ export class ListMovies extends React.Component{
 		});
 	}
 
+	closeCrawl(){
+		console.log("closing crawl");
+		this.setState({
+			currentTitle : "",
+			currentText : "",
+			currentIdEpisode : "",
+			showingCrawl : false
+		});
+	}
+
 	getMoviesList(){
 		return this.state.movies.map(function(currentMovie, i){
 			return (
@@ -69,6 +81,7 @@ export class ListMovies extends React.Component{
 				</div>
 				<div className="ligthBoxOpeningCrawl" style={{display: this.state.showingCrawl ? "block" : "none"}}>
 					<OpeningCrawl title ={this.state.currentTitle} episode ={"Episode" + this.state.currentIdEpisode} contentText = {this.state.currentText}/>
+					<p onClick={this.closeCrawl}>X</p>
 				</div>
 				<h3>Movie List</h3>
 				<table className="table table-striped" style={{ marginTop: 20 }} >

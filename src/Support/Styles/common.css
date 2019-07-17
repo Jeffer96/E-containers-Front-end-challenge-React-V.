@@ -37,6 +37,20 @@
     top: 0%;
     left: 0%;
     z-index: 1;
+    background-image: radial-gradient(transparent,black);
+    cursor: not-allowed;
+}
+
+.ligthBoxOpeningCrawl>p{
+    font-size: 2vw;
+    position: absolute;
+    top: 5%;
+    left: 90%;
+    width: 10%;
+    color: #ff5a01;
+    font-family: "Comic Sans MS";
+    cursor: pointer;
+    z-index: 2;
 }
 
 .sectionCrawl{
@@ -73,6 +87,7 @@
 }
 
 #animatedText>h1{
+    margin-top: 100%;
     -webkit-animation-name: scrollText; /* Safari 4.0 - 8.0 */
     -webkit-animation-duration: 120s; /* Safari 4.0 - 8.0 */
     animation-name: scrollText;
@@ -96,11 +111,11 @@
 }
 
 @-webkit-keyframes scrollText{
-    from{margin-top: 100%}
+    from{margin-top: 130%}
     to{margin-top: -300%}
 }
 
 @keyframes scrollText{
-    from{margin-top: 100%}
+    from{margin-top: 130%}
     to{margin-top: -300%}
 }
