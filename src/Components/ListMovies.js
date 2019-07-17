@@ -15,13 +15,17 @@ export class ListMovies extends React.Component{
 	}
 
 	componentDidMount(){
-		this.setState({loading:true});
+		this.setState({
+			loading:true
+		});
 		fetch('https://swapi.co/api/films/')
 			.then( (data) => {
 				return data.json();
 			}).then( (jsonData) => {
-				this.setState({movies : jsonData.results});
-				this.setState({loading:false});
+				this.setState({
+					movies : jsonData.results,
+					loading:false
+				});
 				//console.log(jsonData.results);
 			}).catch( (error) => {
 				console.log("errror: "+error);
@@ -32,6 +36,7 @@ export class ListMovies extends React.Component{
 		return this.state.movies.map(function(currentMovie, i){
 			return (
 				<tr key={i}>
+					<td>{i+1}</td>
 					<td>{currentMovie.title}</td>
 					<td>{currentMovie.episode_id}</td>
 					<td>{currentMovie.director}</td>
@@ -52,6 +57,7 @@ export class ListMovies extends React.Component{
 				<table className="table table-striped" style={{ marginTop: 20 }} >
 					<thead>
 					<tr>
+						<th>#</th>
 						<th>Nombre</th>
 						<th># episodio</th>
 						<th>Director </th>

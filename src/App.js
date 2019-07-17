@@ -10,7 +10,6 @@ import React from "react";
 
 class App extends React.Component{
 
-
 	render(){
 		return(
 			<Router>
@@ -23,7 +22,7 @@ class App extends React.Component{
 					<div className="collapse navbar-collapse" id="navbarNav">
 						<ul className="navbar-nav">
 							<li className="nav-item active">
-								<Link to="/" className="nav-link active">Listado Peliculas</Link>
+								<Link to= '/' className="nav-link active">Listado Peliculas</Link>
 							</li>
 							<li className="nav-item">
 								<Link to={{pathname:'/characters' , charProps:{filter: "none",idFilter: "none"}}} className="nav-link">Listado Personajes (Todos)</Link>
@@ -34,7 +33,7 @@ class App extends React.Component{
 						</ul>
 					</div>
 				</nav>
-				<Route path="/" exact component={ListMovies} />
+				<Route path="/" exact  component={ListMovies} />
 				<Route path="/characters" component={ListCharacters} />
 				<Route path="/about" component={About} />
 			</Router>

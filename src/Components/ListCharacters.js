@@ -1,7 +1,6 @@
 import * as React from "react";
 import loading from "../Support/Img/loading.gif";
 import {Character} from "./Character";
-import Select from 'react-select';
 
 
 export class ListCharacters extends  React.Component{
@@ -11,7 +10,7 @@ export class ListCharacters extends  React.Component{
         this.state={
             chars : [],
             loading : true,
-            optionsFilter : [],
+            movies : [],
             filterType : "",
             filter : "",
             messageFilter: ""
@@ -28,43 +27,52 @@ export class ListCharacters extends  React.Component{
     }
 
     componentDidMount() {
-        this.setState({
-            loading:true,
-            filterType: this.props.location.charProps ? this.props.location.charProps.filter : "none",
-            filter : this.props.location.charProps ? this.props.location.charProps.idFilter : "none"
-        });
+            this.setState({
+                loading:true,
+                filterType: this.props.location.charProps ? this.props.location.charProps.filter : "none",
+                filter : this.props.location.charProps ? this.props.location.charProps.idFilter : "none"
+            });
 
         fetch("https://swapi.co/api/people/")
             .then((data)=>{
                 return data.json();
-            }).then ((jsonData)=>{
-                this.setState({
-                    chars : jsonData.results,
-                    loading:false
-                });
+            })
+            .then ((data)=>{
+                fetch("https://swapi.co/api/films/")
+                    .then((data)=>{
+                        return data.json();
+                    }).then((moviesData)=>{
+                        let moviesInfo = moviesData.results.map(function(movie,i){
+                            return {title:movie.title,url:movie.url};
+                        });
+                        this.setState({
+                            chars : data.results,
+                            loading: false,
+                            movies : moviesInfo
+                        });
+                })
             }).catch((error)=>{
                 console.log(error);
                 this.setState({loading:false});
-            })
+            });
 
     }
 
-
     getCharsList(){
-
+        let movies = this.state.movies;
         return this.state.chars.map(function(charAt, i){
             return (
-                <Character character = {charAt} key = {i}/>
+                <Character character = {charAt} filmsMap = {movies} index={i} key = {i}/>
             );
         });
     }
 
     getCharListByColorEye(color){
-
+        let movies = this.state.movies;
         return this.state.chars.map(function(charAt, i){
             if (charAt.eye_color===color){
                 return (
-                    <Character character = {charAt} key = {i}/>
+                    <Character character = {charAt} filmsMap = {movies} index={i} key = {i}/>
                 );
             }else{
                 return null;
@@ -73,11 +81,11 @@ export class ListCharacters extends  React.Component{
     }
 
     getCharListByGender(gender){
-
+        let movies = this.state.movies;
         return this.state.chars.map(function(charAt, i){
             if (charAt.gender===gender){
                 return (
-                    <Character character = {charAt} key = {i}/>
+                    <Character character = {charAt} filmsMap = {movies} index={i} key = {i}/>
                 );
             }else{
                 return null;
@@ -86,17 +94,17 @@ export class ListCharacters extends  React.Component{
     }
 
     getCharListByMovie(url){
+        let moviesMap = this.state.movies;
         return this.state.chars.map(function(charAt, i){
 
             let movies = charAt.films;
-            console.log(movies);
             let cond = false;
             for (let i=0; i<movies.length && !cond;i++){
                 cond = movies[i]===url;
             }
             if (cond){
                 return (
-                    <Character character = {charAt} key = {i}/>
+                    <Character character = {charAt} filmsMap = {moviesMap} index={i} key = {i}/>
                 );
             }else{
                 return null;
@@ -174,6 +182,7 @@ export class ListCharacters extends  React.Component{
                 <table className="table table-striped" style={{ marginTop: 20 }} >
                     <thead>
                     <tr>
+                        <th>#</th>
                         <th>Nombre del personaje</th>
                         <th>Color de ojos</th>
                         <th>Genero </th>
