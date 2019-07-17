@@ -59,42 +59,38 @@ export class ListCharacters extends  React.Component{
     }
 
     getCharsList(){
-        let movies = this.state.movies;
         return this.state.chars.map(function(charAt, i){
             return (
-                <Character character = {charAt} filmsMap = {movies} index={i} key = {i}/>
+                <Character character = {charAt} filmsMap = {this.state.movies} index={i} key = {i}/>
             );
-        });
+        }.bind(this));
     }
 
     getCharListByColorEye(color){
-        let movies = this.state.movies;
         return this.state.chars.map(function(charAt, i){
             if (charAt.eye_color===color){
                 return (
-                    <Character character = {charAt} filmsMap = {movies} index={i} key = {i}/>
+                    <Character character = {charAt} filmsMap = {this.state.movies} index={i} key = {i}/>
                 );
             }else{
                 return null;
             }
-        });
+        }.bind(this));
     }
 
     getCharListByGender(gender){
-        let movies = this.state.movies;
         return this.state.chars.map(function(charAt, i){
             if (charAt.gender===gender){
                 return (
-                    <Character character = {charAt} filmsMap = {movies} index={i} key = {i}/>
+                    <Character character = {charAt} filmsMap = {this.state.movies} index={i} key = {i}/>
                 );
             }else{
                 return null;
             }
-        });
+        }.bind(this));
     }
 
     getCharListByMovie(url){
-        let moviesMap = this.state.movies;
         return this.state.chars.map(function(charAt, i){
 
             let movies = charAt.films;
@@ -104,12 +100,12 @@ export class ListCharacters extends  React.Component{
             }
             if (cond){
                 return (
-                    <Character character = {charAt} filmsMap = {moviesMap} index={i} key = {i}/>
+                    <Character character = {charAt} filmsMap = {this.state.movies} index={i} key = {i}/>
                 );
             }else{
                 return null;
             }
-        });
+        }.bind(this));
     }
 
     executeFilter(){

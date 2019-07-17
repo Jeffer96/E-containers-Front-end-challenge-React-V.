@@ -23,3 +23,84 @@
     width: 30%;
     border-width: 0px 0px 1px;
 }
+
+.titleMovie{
+    cursor:pointer;
+    font-family: "Arial Black";
+    color: #282c34;
+}
+
+.ligthBoxOpeningCrawl{
+    width: 100vw;
+    height:  100vh;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    z-index: 1;
+}
+
+.sectionCrawl{
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    perspective: 100px;
+    background-image: url('../Img/backStars.jpg');
+    background-size: cover;
+    overflow: hidden;
+}
+
+#shadow{
+    position: absolute;
+    width: 100%;
+    top: 0%;
+    height: 100%;
+    background-image: linear-gradient(black 10%,transparent);
+}
+
+#animatedText{
+    width: 30%;
+    margin-left: 35%;
+    height: 81%;
+    position: absolute;
+    top: -13%;
+    -webkit-transform-style: preserve-3d; /* Safari 3-8  */
+    -webkit-transform: rotateX(10deg); /* Safari 3-8  */
+    transform-style: preserve-3d;
+    transform: rotateX(10deg);
+
+}
+
+#animatedText>h1{
+    -webkit-animation-name: scrollText; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 120s; /* Safari 4.0 - 8.0 */
+    animation-name: scrollText;
+    animation-duration: 120s;
+}
+
+#animatedText>h1,h2,p{
+    font-family: arial black;
+    color: yellow;
+    width: 100%;
+}
+
+#animatedText>h1,h2{
+    text-align: center;
+    font-size: 2vw;
+}
+
+#animatedText>p{
+    font-size: 1.5vw;
+    text-align: justify;
+}
+
+@-webkit-keyframes scrollText{
+    from{margin-top: 100%}
+    to{margin-top: -300%}
+}
+
+@keyframes scrollText{
+    from{margin-top: 100%}
+    to{margin-top: -300%}
+}
