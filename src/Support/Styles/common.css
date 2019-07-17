@@ -1,0 +1,25 @@
+#loadingLayout{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0%;
+    z-index: 1;
+    background-image: radial-gradient(rgba(0,0,0,0.5) , black);
+}
+
+#loadingLayout > img {
+    width: 20%;
+    margin-top: 15%;
+    margin-left: 40%;
+}
+
+#controlBar{
+    width:  100%;
+    display:  flex;
+}
+
+.selectDyn{
+    width: 30%;
+    border-width: 0px 0px 1px;
+}
