@@ -80,7 +80,7 @@ export class ListMovies extends React.Component{
 					<img src = {loading} alt="Loading"/>
 				</div>
 				<div className="ligthBoxOpeningCrawl" style={{display: this.state.showingCrawl ? "block" : "none"}}>
-					<OpeningCrawl title ={this.state.currentTitle} episode ={"Episode" + this.state.currentIdEpisode} contentText = {this.state.currentText}/>
+					<OpeningCrawl title ={this.state.currentTitle} episode ={"Episode " + this.state.currentIdEpisode} contentText = {this.state.currentText}/>
 					<p onClick={this.closeCrawl}>X</p>
 				</div>
 				<h3>Movie List</h3>

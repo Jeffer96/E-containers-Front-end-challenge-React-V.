@@ -1,7 +1,8 @@
 import * as React from "react";
 import loading from "../Support/Img/loading.gif";
 import {Character} from "./Character";
-
+import {OpeningCrawl} from "./OpeningCrawl";
+import '../Support/Styles/common.css';
 
 export class ListCharacters extends  React.Component{
 
@@ -13,7 +14,11 @@ export class ListCharacters extends  React.Component{
             movies : [],
             filterType : "",
             filter : "",
-            messageFilter: ""
+            messageFilter: "",
+            showingCrawl : false,
+            currentTitle : "",
+            currentIdEpisode : "",
+            currentText: "",
         };
         this.getCharsList = this.getCharsList.bind(this);
         this.executeFilter = this.executeFilter.bind(this);
@@ -23,6 +28,9 @@ export class ListCharacters extends  React.Component{
         this.filterByColorEyes = this.filterByColorEyes.bind(this);
         this.filterByGender = this.filterByGender.bind(this);
         this.filterByMovie = this.filterByMovie.bind(this);
+        this.openCrawl = this.openCrawl.bind(this);
+        this.closeCrawl = this.closeCrawl.bind(this);
+        this.getCharRow = this.getCharRow.bind(this);
 
     }
 
@@ -43,7 +51,7 @@ export class ListCharacters extends  React.Component{
                         return data.json();
                     }).then((moviesData)=>{
                         let moviesInfo = moviesData.results.map(function(movie,i){
-                            return {title:movie.title,url:movie.url};
+                            return {title : movie.title, url : movie.url, crwl : movie.opening_crawl, epid : movie.episode_id};
                         });
                         this.setState({
                             chars : data.results,
@@ -60,18 +68,14 @@ export class ListCharacters extends  React.Component{
 
     getCharsList(){
         return this.state.chars.map(function(charAt, i){
-            return (
-                <Character character = {charAt} filmsMap = {this.state.movies} index={i} key = {i}/>
-            );
+            return this.getCharRow(charAt,i);
         }.bind(this));
     }
 
     getCharListByColorEye(color){
         return this.state.chars.map(function(charAt, i){
             if (charAt.eye_color===color){
-                return (
-                    <Character character = {charAt} filmsMap = {this.state.movies} index={i} key = {i}/>
-                );
+                return this.getCharRow(charAt,i);
             }else{
                 return null;
             }
@@ -81,9 +85,7 @@ export class ListCharacters extends  React.Component{
     getCharListByGender(gender){
         return this.state.chars.map(function(charAt, i){
             if (charAt.gender===gender){
-                return (
-                    <Character character = {charAt} filmsMap = {this.state.movies} index={i} key = {i}/>
-                );
+                return this.getCharRow(charAt,i);
             }else{
                 return null;
             }
@@ -99,13 +101,15 @@ export class ListCharacters extends  React.Component{
                 cond = movies[i]===url;
             }
             if (cond){
-                return (
-                    <Character character = {charAt} filmsMap = {this.state.movies} index={i} key = {i}/>
-                );
+                return this.getCharRow(charAt,i);
             }else{
                 return null;
             }
         }.bind(this));
+    }
+
+    getCharRow(charAt, i){
+        return <Character character = {charAt} filmsMap = {this.state.movies} index={i} openCrwl={this.openCrawl} key = {i}/>;
     }
 
     executeFilter(){
@@ -149,11 +153,33 @@ export class ListCharacters extends  React.Component{
 
     }
 
+    openCrawl(title,id,text){
+        this.setState({
+           currentTitle : title,
+           currentIdEpisode : id,
+           currentText: text,
+           showingCrawl : true
+        });
+    }
+
+    closeCrawl(){
+        this.setState({
+            currentTitle : "",
+            currentIdEpisode : "",
+            currentText: "",
+            showingCrawl : false
+        });
+    }
+
     render(){
         return(
             <div>
                 <div id="loadingLayout" style={{display: this.state.loading ? "block" : "none"}}>
                     <img src = {loading} alt="Loading"/>
+                </div>
+                <div className="ligthBoxOpeningCrawl" style={{display: this.state.showingCrawl ? "block" : "none"}}>
+                    <OpeningCrawl title ={this.state.currentTitle} episode ={"Episode " + this.state.currentIdEpisode} contentText = {this.state.currentText}/>
+                    <p onClick={this.closeCrawl}>X</p>
                 </div>
                 <h3>Personajes </h3>
                 <div id="controlBar">

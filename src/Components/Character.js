@@ -21,7 +21,7 @@ export class Character extends React.Component{
                         {this.props.filmsMap.map((data,i)=>{
                             //let cond = this.props.character ? this.props.character.films.includes(data.title) : false;
                             if (this.props.character.films.includes(data.url) ){
-                                return (<li key={i}>{data.title}</li>);
+                                return (<li style={{cursor : "pointer"}} key={i} onClick={()=>this.props.openCrwl(data.title,data.epid,data.crwl)}>{data.title}</li>);
                             }
                         })}
                     </ul>
