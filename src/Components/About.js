@@ -2,7 +2,11 @@ import React from 'react';
 
 function About(){
     return(
-        <h1>About Works</h1>
+        <div>
+            <h1>Star Wars API</h1>
+            <p>Aplicacion de prueba</p>
+        </div>
+
     );
 }
 

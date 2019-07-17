@@ -142,7 +142,7 @@ export class ListCharacters extends  React.Component{
             filterType : "movie",
             filter : val
         });
-        
+
     }
 
     render(){
