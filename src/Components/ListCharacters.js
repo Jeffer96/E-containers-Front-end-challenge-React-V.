@@ -40,7 +40,8 @@ export class ListCharacters extends  React.Component{
             this.setState({
                 loading:true,
                 filterType: this.props.location.charProps ? this.props.location.charProps.filter : "none",
-                filter : this.props.location.charProps ? this.props.location.charProps.idFilter : "none"
+                filter : this.props.location.charProps ? this.props.location.charProps.idFilter : "none",
+                messageFilter : this.props.location.charProps ? (this.props.location.charProps.filter==="movie" ? "Filtrar por pelicula":""):""
             });
 
         fetch("https://swapi.co/api/people/")
@@ -53,6 +54,7 @@ export class ListCharacters extends  React.Component{
                         return data.json();
                     }).then((moviesData)=>{
                         let movieOptions = [];
+                        movieOptions.push({value:"none",label:"Seleccione una opcion"});
                         let moviesInfo = moviesData.results.map(function(movie,i){
                             movieOptions.push({value : movie.url, label : movie.title});
                             return {title : movie.title, url : movie.url, crwl : movie.opening_crawl, epid : movie.episode_id};
@@ -119,11 +121,11 @@ export class ListCharacters extends  React.Component{
 
     executeFilter(){
 
-        if (this.state.filterType==="eye_color" && this.state.filter!="none"){
+        if (this.state.filterType==="eye_color" && this.state.filter!=="none"){
             return this.getCharListByColorEye(this.state.filter);
-        }else if (this.state.filterType==="gender" && this.state.filter!="none"){
+        }else if (this.state.filterType==="gender" && this.state.filter!=="none"){
             return this.getCharListByGender(this.state.filter);
-        }else if (this.state.filterType==="movie" && this.state.filter!="none"){
+        }else if (this.state.filterType==="movie" && this.state.filter!=="none"){
             return this.getCharListByMovie(this.state.filter);
         }else{
             return this.getCharsList();
@@ -135,7 +137,8 @@ export class ListCharacters extends  React.Component{
         let val = e.target.value;
         this.setState({
             filterType : "eye_color",
-            filter : val
+            filter : val,
+            messageFilter : "Filtro por color de ojos "
         });
 
     }
@@ -144,16 +147,19 @@ export class ListCharacters extends  React.Component{
         let val = e.target.value;
         this.setState({
             filterType : "gender",
-            filter : val
+            filter : val,
+            messageFilter : "Filtro por genero "
         });
 
     }
 
     filterByMovie(e){
-        let val = e.target.value;
+        console.log(e.value);
+        let val = e.value;
         this.setState({
             filterType : "movie",
-            filter : val
+            filter : val,
+            messageFilter : "Filtro por pelicula "
         });
 
     }
@@ -203,7 +209,7 @@ export class ListCharacters extends  React.Component{
                     </select>
                     <Select className="selectOpt"  onChange={this.filterByMovie} options={this.state.movieOpts}/>
                 </div>
-                <h1>{this.state.messageFilter}</h1>
+                <p id="mesageFilter">{this.state.messageFilter}</p>
                 <table className="table table-striped" style={{ marginTop: 20 }} >
                     <thead>
                     <tr>

@@ -110,6 +110,13 @@
     text-align: justify;
 }
 
+#mesageFilter{
+    width: 100%;
+    text-align: center;
+    color: #173040;
+    font-family: arial;
+}
+
 @-webkit-keyframes scrollText{
     from{margin-top: 130%}
     to{margin-top: -300%}

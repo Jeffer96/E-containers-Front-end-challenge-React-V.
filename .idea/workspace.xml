@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e607de7-b20b-4d1e-822b-2e165e70968c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/Components/Character.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Character.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/ListCharacters.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ListCharacters.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Support/Styles/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Support/Styles/common.css" afterDir="false" />
     </list>
@@ -40,8 +41,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/ListMovies.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="66" column="48" selection-start-line="66" selection-start-column="38" selection-end-line="66" selection-end-column="48" />
+            <state relative-caret-position="409">
+              <caret line="68" column="113" selection-start-line="68" selection-start-column="113" selection-end-line="68" selection-end-column="113" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -64,8 +65,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Support/Styles/common.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="661">
-              <caret line="124" column="34" lean-forward="true" selection-start-line="124" selection-start-column="34" selection-end-line="124" selection-end-column="34" />
+            <state relative-caret-position="581">
+              <caret line="116" column="22" selection-start-line="116" selection-start-column="22" selection-end-line="116" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -73,8 +74,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/ListCharacters.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3451">
-              <caret line="203" column="51" selection-start-line="203" selection-start-column="51" selection-end-line="203" selection-end-column="51" />
+            <state relative-caret-position="476">
+              <caret line="211" column="35" selection-start-line="211" selection-start-column="35" selection-end-line="211" selection-end-column="35" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -85,8 +86,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/Character.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="113" selection-start-line="23" selection-start-column="113" selection-end-line="23" selection-end-column="113" />
+            <state relative-caret-position="204">
+              <caret line="12" column="15" lean-forward="true" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -134,7 +135,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="543" />
     <option name="y" value="18" />
     <option name="width" value="1400" />
@@ -226,18 +227,18 @@
       <updated>1563324081122</updated>
       <workItem from="1563324084580" duration="18797000" />
       <workItem from="1563343558735" duration="7532000" />
-      <workItem from="1563386877660" duration="15757000" />
+      <workItem from="1563386877660" duration="18233000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42086000" />
+    <option name="totallyTimeSpent" value="44562000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="543" y="18" width="1400" height="1000" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21292217" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15279241" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -309,8 +310,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/ListMovies.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="66" column="48" selection-start-line="66" selection-start-column="38" selection-end-line="66" selection-end-column="48" />
+        <state relative-caret-position="409">
+          <caret line="68" column="113" selection-start-line="68" selection-start-column="113" selection-end-line="68" selection-end-column="113" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -319,15 +320,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Character.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="113" selection-start-line="23" selection-start-column="113" selection-end-line="23" selection-end-column="113" />
+        <state relative-caret-position="204">
+          <caret line="12" column="15" lean-forward="true" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/ListCharacters.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3451">
-          <caret line="203" column="51" selection-start-line="203" selection-start-column="51" selection-end-line="203" selection-end-column="51" />
+        <state relative-caret-position="476">
+          <caret line="211" column="35" selection-start-line="211" selection-start-column="35" selection-end-line="211" selection-end-column="35" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
@@ -336,8 +337,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Support/Styles/common.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="661">
-          <caret line="124" column="34" lean-forward="true" selection-start-line="124" selection-start-column="34" selection-end-line="124" selection-end-column="34" />
+        <state relative-caret-position="581">
+          <caret line="116" column="22" selection-start-line="116" selection-start-column="22" selection-end-line="116" selection-end-column="22" />
         </state>
       </provider>
     </entry>
